@@ -6,7 +6,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   coupons.each do |coupon|
     cart.each do |inner_cart|
-      if inner_cart[:item] == coupon[:item]
+      if inner_cart[:item] == coupon[:item] && inner_cart[:count] > coupon[:num]
         inner_cart[:count] = inner_cart[:count] - coupon[:num]
         cart[cart.length()] = {
           :item => "#{inner_cart[:item]} W/COUPON",
