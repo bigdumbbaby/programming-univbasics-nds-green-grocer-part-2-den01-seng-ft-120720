@@ -66,7 +66,7 @@ def checkout(cart, coupons)
   
   cart.each do |inner_cart|
     discount += inner_cart[:count]
-    total += (inner_cart[:count] * inner_cart[:price]).round(2)
+    total += (inner_cart[:count] * inner_cart[:price])
   end
   #binding.pry
   if discount > 100
